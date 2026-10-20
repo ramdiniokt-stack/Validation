@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/books', [BookController::class, 'index']);
-Route::get('/books/{id}', [BookController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/members', [MemberController::class, 'index']);
+Route::redirect('/', '/books');
+Route::resource('books', BookController::class);
